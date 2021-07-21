@@ -1,0 +1,14 @@
+article.container-four {
+    background-image: url(../../img/bg/bgfive.webp);
+    background-size: cover;
+    padding: 2rem 0;
+
+    .container {
+        @include boundaries(column, column);
+        justify-content: center
+    }
+
+    h4 {
+        @include font(2rem, bold, center);
+    }
+}

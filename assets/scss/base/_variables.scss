@@ -1,0 +1,50 @@
+$color-black: #000;
+$color-text: #ff0000;
+$color-button: #cc0033;
+
+@mixin boundaries($isFlex, $isFlexMedia) {
+    display: flex;
+    width: 90%;
+    max-width: 1080px;
+    margin: auto;
+    flex-direction: $isFlex;
+
+    @media screen and (max-width: 480px) {
+        flex-direction: $isFlexMedia;
+    }
+}
+
+@mixin font($isSize, $isWeight, $isAlign) {
+    font-size: $isSize;
+    font-weight: $isWeight;
+    text-align: $isAlign;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0.5rem 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $color-button;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+h1 > strong, 
+h2 > strong,
+h3 > strong,
+h4 > strong,
+h5 > strong,
+p > strong {
+    color: $color-text;
+}
+
+@function set-icon-color($color) {
+    @if ($color == $color-button) {
+        @return #fff;
+    } @else {
+        @return $color-text;
+    }
+}

@@ -1,0 +1,36 @@
+@import 'video';
+article.container-video {
+    background-image: url(../../img/bg/bgthree.webp);
+    background-size: cover;
+    padding: 2rem 0;
+
+    .container {
+        @include boundaries(column, column);
+        justify-content: center
+    }
+
+    .video {
+        width: 640px !important;
+        height: 360px !important;
+
+        @media screen and (max-width: 720px){
+            & {
+                width: 100% !important;
+                height: 14rem !important;
+            }
+        }
+        @media screen and (max-width: 300px){
+            & {
+                height: 10rem !important;
+            }
+        }
+    }
+
+    .button {
+        margin-top: 2rem;
+
+        p {
+            @include font(1.1rem, bold, center);
+        }
+    }
+}

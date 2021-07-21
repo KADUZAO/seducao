@@ -1,0 +1,51 @@
+@import '../base/base.scss';
+
+article.container-one {
+    background-image: url(../../img/bg/bgone.webp);
+    background-size: cover;
+    height: 100vh;
+    .container {
+        @include boundaries(row, column);
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container-left {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        height: 50%;
+        justify-content: space-between;
+        h1 {
+            @include font(1.8rem, bold, center);
+        }
+        p {
+            @include font(0.9rem, bold, center);
+            width: calc(100% - 50px);
+            margin: auto;
+        }
+        .button p{
+            @include font(1.1rem, bold, center);
+            width: 100%;
+        }
+
+        @media screen and (max-width: 480px){
+            & {
+                width: 100%;
+                margin-bottom: 4rem;
+            }
+        }
+    }
+
+    .container-right {
+        width: 40%;
+        @import 'video';
+
+        @media screen and (max-width: 480px){
+            & {
+                width: 100%;
+            }
+        }
+    }
+}

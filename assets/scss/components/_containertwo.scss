@@ -1,0 +1,35 @@
+article.container-two {
+    background-image: url(../../img/bg/bgtwo.webp);
+    background-size: cover;
+    height: 100vh;
+
+    .container {
+        @include boundaries(column, column);
+        height: 100%;
+    }
+
+    h2 {
+        @include font(2rem, bold, center);
+        margin-top: 5rem;
+        margin-bottom: 7rem;
+    }
+
+    .content__container-two {
+        display: flex;
+        margin-bottom: 2rem;
+        i {
+            color: set-icon-color($color-text);
+            margin-right: 0.5rem
+        }
+        p {
+            @include font(1rem, bold, left);
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        & {
+            height: auto;
+            padding-bottom: 4rem;
+        }
+    }
+}
